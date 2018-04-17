@@ -10,7 +10,9 @@ export function EmailList(props) {
                 {email.from}
             </div>
             <div className="email-list-email-title">
-                <Link to={`/${props.folderId}/${email.id}`}> {email.title} </Link>
+                <Link to={`/${props.folderId}/${email.id}`}> 
+                  {email.title} 
+                </Link>
             </div>
         </li>
     );
@@ -24,15 +26,18 @@ export function EmailList(props) {
         </div>
     );
 }
-//match is a prop provided by react router
-//this will be key, and actual word will be the value 
+
 const mapStateToProps = (state, props) => {
     const folderId = props.match.params.folderId;
+    //match is a prop provided by react router
+    //this will be key, and actual word will be the value 
+    //this is props we're passing
+  
     const folder = state[folderId]; //looking for state.inbox or state.spam. 
     //selects property from object where name is a variable
     return {
         folderId,
-        folderName: folder.name,
+        folderName: folder.name,  
         emailList: Object.keys(folder.emails).map(
             emailId => folder.emails[emailId]
         )

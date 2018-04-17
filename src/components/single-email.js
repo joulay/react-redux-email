@@ -16,11 +16,12 @@ export function SingleEmail(props) {
         </div>
     );
 }
-
+//state is initial state in redux store (index.js)
+//props are from react router dom
 const mapStateToProps = (state, props) => {
-  const folderId= props.match.params.folderId;
+  const folderId= props.match.params.folderId;//from url or link to anchor tag
   const emailId=props.match.params.emailId;
-  const email=state[folderId].emails[emailId];
+  const email=state[folderId].emails[emailId]; //dot notation
   return Object.assign({}, email, {
       folderId,
       emailId
@@ -28,3 +29,5 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps)(SingleEmail);
+//passing what we are declaring as a closure
+//passing data from maps to singleEmail

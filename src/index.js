@@ -7,6 +7,12 @@ import {BrowserRouter} from 'react-router-dom';
 import Email from './components/email';
 import './index.css';
 
+//folderid comes from this initial state
+//id: 'inbox' or 'spam'
+//email id: 0, 1 
+// /inbox/0 will be from billg@microsoft
+// we're passing these props to our components and email list
+//which has map and putting it <li>'s
 const initialState = {
     inbox: {
         id: 'inbox',
