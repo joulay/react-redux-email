@@ -3,19 +3,22 @@ import Sidebar from './sidebar';
 import SingleEmail from './single-email';
 import EmailList from './email-list';
 import './email.css';
-import {Route} from 'react-router-dom';
+import {Switch, Redirect, Route} from 'react-router-dom';
 
 export default function Email() {
     return (
         <div className="email">
-            <Route path="/" exact component={Sidebar} />
-            
+            <Route path="/" component={Sidebar} />
             <main>
-              
-      
-                 <Route exact path="/:folderId" component={EmailList} />     
+             <Switch>  
+                 <Redirect from='/' exact to='/inbox' />
+                 <Route path="/:folderId" exact component={EmailList} />     
                  <Route exact path="/:folderId/:emailId" component={SingleEmail} />
+            </Switch>     
             </main>
         </div>
     );
 }
+
+// /: is a dynamic segment. 
+// switch only going to get first match

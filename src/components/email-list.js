@@ -24,7 +24,8 @@ export function EmailList(props) {
         </div>
     );
 }
-
+//match is a prop provided by react router
+//this will be key, and actual word will be the value 
 const mapStateToProps = (state, props) => {
     const folderId = props.match.params.folderId;
     const folder = state[folderId];
