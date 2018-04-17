@@ -31,8 +31,8 @@ const mapStateToProps = (state, props) => {
     return {
         folderId,
         folderName: folder.name,
-        emailList: Object.keys(folder.emails).map(emailId =>
-            folder.emails[emailId]
+        emailList: Object.keys(folder.emails).map(
+            emailId => folder.emails[emailId]
         )
     }
 };

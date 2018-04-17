@@ -13,8 +13,8 @@ export default function Email() {
             <main>
               
       
-                 <Route path="/:folderId" exact component={EmailList} />     
-                 <Route path="/:folderId/:emailId" exact component={SingleEmail} />
+                 <Route exact path="/:folderId" component={EmailList} />     
+                 <Route exact path="/:folderId/:emailId" component={SingleEmail} />
             </main>
         </div>
     );
