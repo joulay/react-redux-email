@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 export function Sidebar(props) {
     const folders = props.folderList.map(folder =>
         <li key={folder.id} className="folder-menu-list-item">
-            <Link to='/:folderId'>{folder.name}</Link>                            
+            <Link to={`/:${folder.id}`}>{folder.name}</Link>                            
         </li>
     );
 

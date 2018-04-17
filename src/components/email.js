@@ -8,13 +8,13 @@ import {Route} from 'react-router-dom';
 export default function Email() {
     return (
         <div className="email">
-            <Sidebar />
+            <Route path="/" exact component={Sidebar} />
             
             <main>
-                <EmailList folderId="inbox" />
-                {/* <SingleEmail folderId="inbox" emailId="1" /> */}
-                 <Route path="/:folderId" exact component={} />     
               
+      
+                 <Route path="/:folderId" exact component={EmailList} />     
+                 <Route path="/:folderId/:emailId" exact component={SingleEmail} />
             </main>
         </div>
     );
