@@ -28,7 +28,8 @@ export function EmailList(props) {
 //this will be key, and actual word will be the value 
 const mapStateToProps = (state, props) => {
     const folderId = props.match.params.folderId;
-    const folder = state[folderId];
+    const folder = state[folderId]; //looking for state.inbox or state.spam. 
+    //selects property from object where name is a variable
     return {
         folderId,
         folderName: folder.name,
